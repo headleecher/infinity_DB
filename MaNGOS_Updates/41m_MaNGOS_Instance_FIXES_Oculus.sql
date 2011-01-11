@@ -22,3 +22,10 @@ UPDATE `creature_template` SET `KillCredit1` = 27641 WHERE `entry` = 27641;
 
 -- Eternos
 UPDATE `creature_template` SET `npcflag` = 1 WHERE `entry` = 27659; -- YTDB FIX Make eternos capable of gossip - to give out drake
+
+-- FallenAngelX
+ALTER TABLE db_version_Infinity_Update CHANGE COLUMN r40 r41 bit;
+REPLACE INTO `db_version_Infinity_Update` (`version`) VALUES ('r41');
+
+UPDATE db_version SET `cache_id`= 'r41';
+UPDATE db_version SET `version`= 'YTDB579_Infinity_Update_r41';
